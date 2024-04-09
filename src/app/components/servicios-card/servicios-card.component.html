@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <ion-datetime  locale="es-ES" [(ngModel)]="selectedDate" [(ngModel)]="selectedTime" displayFormat="HH:mm" pickerFormat="HH:mm" minuteValues="0,30" hourValues="10,11,12,13,14,15,16,17" [min]="minDate" [max]="maxDate"></ion-datetime>
+      <ion-button (click)="onButtonClick()">Enviar</ion-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <h3 class="title" *ngIf="(cartItems$ | async)?.length">{{(cartItems$ | async)?.length}} total de productos</h3>
+
+  <!--Inicio del cart de productos-->
+  <ion-list lines="none">
+    <ion-item-sliding *ngFor="let item of cartItems$ | async">
+      <ion-item>
+        <app-cart-item [item]="item" (increase)="onIncrease(item)" (decrease)="onDecrease(item)"></app-cart-item>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="removeFromCart(item)">
+          <ion-icon  name="trash-outline" size='large' color="danger"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!--contenedor de vacio o no de card-->
+  <div class="empty-cart" *ngIf="!(cartItems$ | async)?.length">
+    <ion-icon name="cart-outline"></ion-icon>
+    <p>Vacio</p>
+  </div>
+
+  <!--botton de pago-->
+  <app-button *ngIf="(cartItems$ | async)?.length" (click)="presentPaymentSummaryModal()">
+    Pagar total: <span><sup>$</sup>{{(totalAmount$ | async) | number: '1.2-2'}}</span>
+  </app-button>
+
+</ion-content>
+
+<ion-modal #paymentSummaryModal>
+  <ng-template>
+    <div class="payment-summary-modal">
+      <div class="payment-summary-content">
+        <h2 style="align-items: center; text-align: center;">Total a pagar: ${{ (totalAmount$ | async) | number: '1.2-2' }}</h2>
+        <p style="align-items: center; text-align: center;">total de productos {{(cartItems$ | async)?.length}}</p>
+        <form [formGroup]="paymentForm" class="payment-form" (ngSubmit)="processPayment()">
+          <div class="card-information"><br>
+            <h3>agregar tarjeta</h3><br>
+            <div class="form-row">
+              <label for="cardNumber">Número de tarjeta</label>
+              <input type="text" class="card-number" formControlName="cardNumber" id="cardNumber" placeholder="•••• •••• •••• ••••">
+            </div><br>
+            <div class="form-row">
+              <label for="cardHolder">Nombre del titular</label>
+              <input type="text" class="card-holder" formControlName="cardHolder" id="cardHolder" placeholder="Nombre y apellidos">
+            </div><br>
+            <div class="form-row full-width">
+              <div class="form-row">
+                <label for="expirationDate">Fecha de caducidad</label>
+                <input type="text" class="expiration-date" formControlName="expirationDate" id="expirationDate" placeholder="MM/YY">
+              </div><br>
+              <div class="form-row">
+                <label for="cvv">CVV</label>
+                <input type="text" class="cvv" formControlName="cvv" id="cvv" placeholder="•••">
+              </div>
+            </div><br>
+            <div class="form-row">
+              <label for="postalCode">Código postal</label>
+              <input type="text" class="postal-code" formControlName="postalCode" id="postalCode" placeholder="•••••">
+            </div>
+          </div><br>
+          <div class="payment-summary-buttons" style="align-items: center;">
+            <button ion-button style="margin-left: 80px;" (click)="dismissModal()">Cancelar</button>
+            <button ion-button color="primary" style="margin-left: 30px;" type="submit" (click)="processPayment()">Comprar ahora</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>

@@ -1,0 +1,43 @@
+ion-tab-bar {
+  padding: 10px 0;  
+
+  ion-tab-button {
+    ion-icon {
+      font-size: 1.7rem;
+      font-weight: 700;
+      
+    }
+  }
+}
+
+.card-title{
+  width: 100%; 
+  height: auto; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.card-subtitle{
+  width: 100%; /* Cambia el valor según lo que necesites */
+  height: auto; /* Esto mantiene la proporción de la imagen */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+}
+
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.avatar ion-icon {
+  font-size: 24px; /* Ajusta el tamaño del ícono según tus necesidades */
+}

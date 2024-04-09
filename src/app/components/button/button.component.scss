@@ -1,0 +1,12 @@
+ion-button {
+    --box-shadow: none;
+    --border-radius: 1.8rem;
+    color: rgb(0, 0, 0);
+    --background:#ffb800;
+    --background-activated: rgb(188, 171, 73);
+    
+    text-transform: initial;
+    font-size: 1.4rem;
+    font-weight: 10;
+    height: 70px;
+}

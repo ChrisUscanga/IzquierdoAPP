@@ -1,0 +1,72 @@
+ion-content {
+    background-color: #f4f5f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ion-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-image: url(../../../assets/img/Em1.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    height: 150px; /* Ajusta la altura según sea necesario */
+    width: 100%;
+    max-width: 170px;
+  }
+  
+  ion-card img {
+    width: 20%;
+    height: auto;
+    background-repeat: no-repeat;
+
+  }
+  
+  ion-card-header {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  ion-card-content {
+    text-align: center;
+    font-size: 16px;
+  }
+  ion-content {
+  --ion-background-color: #ffffff;
+}
+
+ion-button {
+    --background: #cecece;
+    --border-radius: 50%;
+    --border-width: 1px;
+    --color: #000000;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+    --padding-start: 15px;
+    --padding-end: 5px;
+    width: 60px;
+    height: 60px;
+    display: flex; /* Añade Flexbox */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    text-align: center;
+    margin: 0;
+  }
+  
+  ion-icon {
+    --color: #000000;
+    --font-size: 30px;
+    text-align: center;
+  }
+  

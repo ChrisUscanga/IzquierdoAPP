@@ -1,0 +1,35 @@
+<ion-content mode="ios" [fullscreen]="true">
+  <div class="login-setction ion-padding">
+    <div class="heading ion-padding">
+      <h1>Configuracion de usuario</h1>
+      <p>Actualiza tus datos</p>
+    </div>
+    <div class="login-form ion-padding">
+      <div class="form-input">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Nombre Completo</ion-label>
+          <ion-input type="text" [(ngModel)]="nombreCompleto"></ion-input> <!-- Vinculado a nombreCompleto -->
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Correo Electronico</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input> <!-- Vinculado a email -->
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input> <!-- Vinculado a password -->
+        </ion-item>
+      </div>
+    </div>
+    <div class="action-button ion-padding">
+      <ion-button  expand="block" color="warning" (click)="update()">Guardar Cambios</ion-button><br>
+      <ion-button expand="block" color="danger" (click)="presentAlertConfirm()">Cerrar Sesión</ion-button>
+    </div>
+  </div>
+</ion-content>

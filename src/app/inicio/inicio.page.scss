@@ -1,0 +1,47 @@
+.card-title{
+    width: 100%; 
+    height: auto; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  .card-subtitle{
+    width: 100%; 
+    height: auto; 
+    display: flex;
+    font-size: 30px;
+    justify-content: center; 
+    align-items: center;
+    color: black;
+    border-radius: 50%;
+  }
+
+  .card-subtitle ion-button {
+    width: 200px; 
+  }
+  
+  .logo-1 {
+    height: auto; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .card-background-page {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  
+  .card-content {
+    text-align: center;
+    height: 80vh; 
+  }
+
+  .black{
+    background-color: black;
+  }

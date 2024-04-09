@@ -1,0 +1,38 @@
+
+<ion-content>
+  <div class="header">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home/listing">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons>
+
+    </ion-buttons>
+  </div>
+
+  <!--detail card-->
+<div class="card">
+  <div class="image">
+    <ion-img [src]="food?.image"></ion-img>
+  </div>
+  <div class="card-content">
+    <div class="card-title">
+      <h1 class="ion-no-margin">{{food?.title}}</h1>
+      <p class="ion-no-margin"><sup>$</sup>{{food?.price}}</p>
+    </div>
+  </div>
+
+  <div class="rates">
+    <app-badge icon="star-half-outline" text="4.5"></app-badge>
+  </div>
+
+  <div class="about">
+    <h1>Descripción</h1>
+    <p>{{food?.description}}</p>
+  </div>
+
+  <app-button  (click)="addItemtoCart()"  >Agregar al carrito</app-button>
+</div>
+</ion-content>
+

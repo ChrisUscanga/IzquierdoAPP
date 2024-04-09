@@ -1,0 +1,29 @@
+<ion-content>
+  <!--HEADER-->
+  <div class="banner">
+    <img src="../../../assets/imagen/icons/-IZQUIERDO-.png" alt="">
+  </div>
+
+  <!--searchbar-->
+  <app-searchbar></app-searchbar>
+
+  <ion-segment [(ngModel)]="productosToggle" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); align-items: center; justify-content: center; width: 80%; margin: 0 auto; font-size: 12px; padding: 5px;" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button value="true" mode="ios">
+      <ion-label class="parafo1" >Productos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="false" mode="ios">
+      <ion-label class="parafo1" >Reservacion</ion-label>
+    </ion-segment-button>
+  </ion-segment><br>
+
+  <!--slider-->
+
+  <!--productos / servicios-->
+  <div class="kit-list" *ngIf="productosToggle">
+    <app-food-card  *ngFor="let food of foods" [item]="food" (click)="goToDetailPage(food.id)" ></app-food-card>
+  </div>
+  <div class="kit-list" *ngIf="!productosToggle">
+    <!--aqui agrega lo que va a ir en servicios-->
+    <app-servicios-card></app-servicios-card>
+  </div><br>
+</ion-content>

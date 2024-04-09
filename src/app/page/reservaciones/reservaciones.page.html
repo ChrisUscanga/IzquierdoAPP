@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>reservaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="conteiner" style="text-align: center;">
+    <h1>{{ selectedDateText }}</h1>
+    <ion-button id="open-picker">Servicios</ion-button>
+    <ion-picker trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
+    <p>{{ serviceMessage }}</p>
+    <p>{{ timeMessage }}</p>
+  </div>
+  <ion-button (click)="enviarReservas()" (click)="generarPDF()">
+    Enviar Reservas
+  </ion-button>
+  
+</ion-content>

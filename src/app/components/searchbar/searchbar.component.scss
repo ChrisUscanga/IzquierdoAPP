@@ -1,0 +1,14 @@
+ion-searchbar {
+    
+    --box-shadow: none;
+    --background: #f3f3f3;
+    --border-radius: 1.2rem;
+    --placeholder-opacity: 0.2;
+    z-index: 3;
+
+    padding: 0;
+    margin-right: 0;
+    left: 20px;
+    bottom: 30px;
+    max-width: 90%;
+}
